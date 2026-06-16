@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url(../../Asset/404/404.gif);
+    background: url('https://files.catbox.moe/ord3cp.gif');
     background-position: center;
     background-repeat: no-repeat;
 }
