@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Cookie Clicker</title>
+    <link icon rel="icon" href="https://orteil.dashnet.org/cookieclicker/img/favicon.ico" type="image/x-icon">
+<head>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; -webkit-user-select: none; -ms-user-select: none; user-select: none; }
+
+        #loading {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 2;
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        .spinner {
+            width: 50px; height: 50px;
+            border: 5px solid #333;
+            border-top: 5px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .fullscreen-iframe {
+            border: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <iframe class="fullscreen-iframe" src="https://cookiegame.org/index.html"></iframe>
+
+    <script>
+        const iframe = document.querySelector('.fullscreen-iframe');
+
+        iframe.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>
